@@ -16,7 +16,7 @@ const HomePage = () => {
     const submitSearch = e => {
         e.preventDefault();
         axios
-            .get(`http://www.omdbapi.com/?s=${searchTitle}&apikey=${process.env.REACT_APP_API_KEY}`)
+            .get(`https://www.omdbapi.com/?s=${searchTitle}&apikey=${process.env.REACT_APP_API_KEY}`)
             .then(res => {
                 if (res.data.Response === "False"){
                     setApiErr(true);

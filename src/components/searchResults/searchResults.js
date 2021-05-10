@@ -1,14 +1,37 @@
 import React from 'react';
 import searchResults from './searchResults.module.scss';
 
-const SearchResults = ({ films, setNominations, searchTitle }) => {
+const SearchResults = ({ films, setNominations, nominations, searchTitle }) => {
+
+    const nominate = film => {
+        let newNoms = [...nominations];
+        newNoms.push(film);
+        setNominations(newNoms);
+    };
+
+    const searchNoms = film => {
+        for (let i = 0; i < nominations.length; i++){
+            if (film.Title === nominations[i].Title && film.Year === nominations[i].Year){
+                return true;
+            }
+        }
+    };
+
     return (
         <div className={searchResults.container}>
-            <h2>Search results for "{searchTitle}"</h2>
+            <h3>Search results for "{searchTitle}"</h3>
             <ul className={searchResults.filmList}>
                 {films.map(film => {
                     return (
-                        <li>{film.Title} ({film.Year})</li>
+                        <>
+                            <li key={film.Title}>
+                                {film.Title} ({film.Year})
+                            </li>
+                            <button 
+                                onClick={() => nominate(film)}
+                                disabled={searchNoms(film) || nominations.length >= 5}
+                            >Nominate</button>
+                        </>
                     );
                 })}
                 

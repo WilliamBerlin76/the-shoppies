@@ -23,7 +23,7 @@ const SearchResults = ({ films, setNominations, nominations, searchTitle }) => {
             <ul className={searchResults.filmList}>
                 {films.map(film => {
                     return (
-                        <>
+                        <div className={searchResults.card}>
                             <li key={film.Title}>
                                 {film.Title} ({film.Year})
                             </li>
@@ -31,7 +31,7 @@ const SearchResults = ({ films, setNominations, nominations, searchTitle }) => {
                                 onClick={() => nominate(film)}
                                 disabled={searchNoms(film) || nominations.length >= 5}
                             >Nominate</button>
-                        </>
+                        </div>
                     );
                 })}
                 

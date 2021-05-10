@@ -36,16 +36,20 @@ const HomePage = () => {
     };
 
     return (
-        <div>
+        <div className={homePage.container}>
             <form
                 onSubmit={submitSearch}
             >
                 <input 
+                    className={homePage.searchBar}
                     placeholder="Search Movies"
                     onChange={handleChange}
                 />
                 <button>Search!</button>
             </form>
+            {nominations.length >= 5 && (
+                <p className={homePage.banner}>✨You have selected the maximum number of nominations!</p>
+            )}
             {apiErr ? (
                 <p>Search was unsuccessful</p>
             ) : (

@@ -2,10 +2,18 @@
     background: #ffffff;
     width: 45%;
     text-align: left;
+    padding: 20px;
+    box-shadow: 3px 3px 4px 2px grey;
     .filmList {
         text-align: left;
-        button {
-            cursor: pointer;
+        .card {
+            display: flex;
+            margin: 10px;
+            button {
+                cursor: pointer;
+                font-size: 1rem;
+                margin-left: 15px;
+            }
         }
     }
 }

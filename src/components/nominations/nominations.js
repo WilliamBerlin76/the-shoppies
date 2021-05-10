@@ -18,16 +18,13 @@ const Nominations = ({ nominations, setNominations }) => {
     return (
         <div className={noms.container}>
             <h3>Nominations</h3>
-            {nominations.length >= 5 && (
-                <p>You have selected the maximum number of nominations</p>
-            )}
             <ul className={noms.filmList}>
                 {nominations.map(item => {
                     return(
-                        <>
+                        <div className={noms.card}>
                             <li key={item.Title}>{item.Title} ({item.Year})</li>
                             <button onClick={() => removeNom(item)}>Remove</button>
-                        </>
+                        </div>
                     );
                 })}
             </ul>

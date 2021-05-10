@@ -1,7 +1,23 @@
-button {
-    cursor: pointer;
+.container {
+    width: 80%;
+    margin: 0 auto;
+    form {
+        margin: 15px;
+        .searchBar {
+            width: 50%;
+            font-size: 1.3rem;
+        }
+        button {
+            cursor: pointer;
+            font-size: 1.3rem;
+            margin-left: 10px
+        }
+    }
+    .banner{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
 }
-
 .listsContainer {
     display: flex;
     width: 100%;
